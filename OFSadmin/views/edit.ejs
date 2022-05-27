@@ -1,0 +1,45 @@
+<%- include ('partials/header1') %>
+<div class="container">
+<h1> Update Product </h1>
+<form action="/admin/<%= product._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+<div class="row">
+<div class="form-group col-md-4">
+	<input type="text" name="title" class="form-control" placeholder="title" value="<%= product.title%>">
+</div>
+</div>
+<div class="row">
+ <div class="form-group col-md-4">
+	<input type="text" name="category" class="form-control" placeholder="category" value="<%= product.category%>">
+</div>
+</div>
+<div class="row">
+<div class="col-md-2">
+	<input type="file" name="file" class="form-control" placeholder="image name" >
+</div>
+</div>
+<div class="row">
+ <div class="form-group col-md-4">
+	<input type="text" name="rating" class="form-control" placeholder="Rating" value="<%= product.rating%>">
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-4">
+	<input type="text" name="cost" class="form-control" placeholder="Product Cost" value="<%= product.cost%>">
+</div>
+</div>
+<div class="row">
+ <div class="form-group col-md-4">
+	<textarea name="description" class="form-control" placeholder="description"><%= product.description%></textarea>
+</div>
+</div>
+<div class="row">
+<div class="form-group col-md-4">
+	<button type="submit" class="btn btn-info" >Save</button>
+</div>
+</div>
+</div>
+
+
+</form>
+</div>

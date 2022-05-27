@@ -1,0 +1,13 @@
+<%- include ('partials/header') %>
+<div class="jumbotron">
+  <h1 class="display-4">Furniture Mart Application</h1>
+  <p class="lead">This is the list of most popular Products</p>
+  <a class="btn btn-primary btn-lg" href="/products" role="button">
+  View Products</a>
+  <a class="btn btn-primary btn-lg" href="/admin/new" role="button">
+  Add New Product</a>
+</div>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+
+<a href="/products" class="btn btn-secondary">Logout</a>
+<%- include ('partials/footer') %>

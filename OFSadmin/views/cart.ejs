@@ -1,0 +1,52 @@
+<%- include ('partials/header2') %>
+<div class="container">
+<div class ="row">
+<p class="lead mb-3">Welcome <%= user.name %></p>
+</div>
+<div class="row">
+<table> 
+<tr>
+<th>
+Product
+</th>
+<th>
+Title
+</th>
+<th>
+Price per Piece 
+</th>
+<th>
+Quantity
+</th>
+<th>
+Modify Cart
+</th>
+</tr>
+<% results.forEach(function(product){ %>
+  <tr>
+  <td> 
+  <img src="../images/<%= product.image %>" style="width:200px; height:200px;" class="img-thumbnail"/>
+  </td>
+  <td>
+   <%= product.title %>
+  </td>
+  <td>
+     <%= product.cost %>
+  </td>
+  <td>
+     <%= product.quantity %>
+  </td>
+  <td>
+   <a href="/products/cart/update/<%= product._id %>" class="btn btn-secondary">Reduce Quantity by 1</a>
+   <a href="/products/cart/delete/<%= product._id %>" class="btn btn-secondary">Remove From Cart</a>
+  </td>
+  </tr>
+
+<% }); %>
+</table>
+<div class="col-md-1">
+<a href="/products/checkout" class="btn btn-secondary">Check Out</a>
+</div>
+</div>
+</div>
+<%- include ('partials/footer') %>
