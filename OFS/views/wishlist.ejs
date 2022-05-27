@@ -1,0 +1,44 @@
+<%- include ('partials/header2') %>
+<div class="container">
+<div class ="row">
+<p class="lead mb-3">Welcome <%= user.name %></p>
+</div>
+<div class="row">
+<table> 
+<tr>
+<th>
+Product
+</th>
+<th>
+Title
+</th>
+<th>
+Price per Piece 
+</th>
+<th>
+Modify Wishlist
+</th>
+</tr>
+<% results.forEach(function(product){ %>
+  <tr>
+  <td> 
+  <img src="../images/<%= product.image %>" style="width:200px; height:200px;" class="img-thumbnail"/>
+  </td>
+  <td>
+   <%= product.title %>
+  </td>
+  <td>
+     <%= product.cost %>
+  </td>
+  <td>
+   <a href="/products/wishlist/delete/<%= product._id %>" class="btn btn-secondary">Remove from Wish List</a>
+   <a href="/products/cart/<%= product.pid %>" class="btn btn-secondary">Add To Cart</a>
+  </td>
+  </tr>
+
+<% }); %>
+</table>
+</div>
+</div>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<%- include ('partials/footer') %>
